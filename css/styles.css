@@ -1,0 +1,115 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */    
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1 rem = 10px */    
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, .4), 
+        rgba(148, 48, 48, .4), 
+        rgba(167, 67, 67, .4)),
+        url(../img/background-prueba-1.jpg) center no-repeat;
+    background-size: cover;
+}
+.hamburguer-menu{
+    width: 35px;
+    height: 30px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+.line{
+    width: 100%;
+    height: 3px;
+    background-color: chocolate;
+    transition: all .8s;
+}
+.change .line-1{
+    transform: rotateZ(-405deg) translate(-8px, 6px);
+}
+.change .line-2{
+    opacity: 0;
+}
+.change .line-3{
+    transform: rotateZ(405deg) translate(-8px, -6px);
+}
+.navegation{
+    width: 300px;
+    height: 100vh;
+    background-color: rgba(26, 26, 26, .7);
+    position: fixed;
+    top: 0;
+    right: -300px;
+    border-radius: 20% 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .8s cubic-bezier(1, 0, 0, 1);
+}
+.change{
+    right: 0;
+}
+.nav-list{
+    height: 60%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.nav-item{
+    text-decoration: none;
+}
+.nav-link{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: rgb(126, 126, 126);
+    position: relative;
+    padding: 3px 0;
+}
+.nav-link::after,
+.nav-link::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: chocolate;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.nav-link::after{
+    bottom: 0;
+    transform-origin: right;
+}
+.nav-link::before{
+    top: 0;
+    transform-origin: left;
+}
+.nav-link:hover::after,
+.nav-link:hover::before{
+    transform: scaleX(1);
+}
